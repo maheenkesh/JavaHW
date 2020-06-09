@@ -1,0 +1,72 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    /* int grade = 0;
+    String name = "";
+    String letterGrade = "";
+    
+    Scanner gradeConverter = new Scanner(System.in);
+    System.out.println("Name:");
+    name = gradeConverter.nextLine();
+    System.out.println("Grade:");
+    grade = Integer.parseInt(gradeConverter.nextLine());
+    letterGrade = switchConverter(grade);
+    System.out.println(grade + " is a(n) " + letterGrade); */
+    System.out.println(hangOut(true, 14));
+
+  }  
+  //part 1: grade to letterGrade 
+  public static String gradeLetter(int grade) {
+    String letterGrade = "";
+    if (grade >= 90) {
+        letterGrade = "A";
+    } else if (grade >= 80) {
+        letterGrade = "B";
+    } else if (grade >= 70) {
+        letterGrade = "C";
+    } else if (grade >= 60) {
+        letterGrade = "D";
+    } else {
+        letterGrade = "F";
+    }
+    return letterGrade;
+  }
+  //part 2: switch grade to letterGrade
+  //programmers would prefer switch when the function has many logical conditions, whereas if/else is better for very simple and few different conditions
+  public static String switchConverter(int grade){
+    String letterGrade = "";
+  switch (grade/10) {
+    case 9:
+      letterGrade = "A";
+      break;
+    case 8:
+      letterGrade = "B";
+      break;
+    case 7:
+      letterGrade = "C";
+      break;
+    case 6:
+      letterGrade = "D";
+      break;
+    default:
+      letterGrade = "F";
+      break;
+  }
+  return letterGrade;
+}
+
+//part 3: own nested if statement
+public static String hangOut(boolean justTraveled, int daysOfQuarantine){
+  String myResponse = "";
+  if (justTraveled == true){
+    if (daysOfQuarantine >= 14){
+      myResponse = "Ok let's hang out socially distanced.";
+    } else {
+      myResponse = "I'll see you in " + (14 - daysOfQuarantine) + " day(s)!";
+    }
+  } else {
+    myResponse = "Ok let's hang out socially distanced.";
+  }
+  return myResponse;
+}
+  }
